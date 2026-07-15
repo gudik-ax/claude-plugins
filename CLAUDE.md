@@ -16,6 +16,26 @@ extract that group into a dedicated, well-named plugin rather than letting `comm
 whole point. Whenever you add a new plugin, register it in both `.claude-plugin/marketplace.json`
 and the README plugin table.
 
+## Gating skills on explicit invocation
+
+Most skills should trigger from natural phrasing. Gate one behind explicit invocation only when
+auto-firing would be **destructive** (rewrites history, merges to the trunk) or
+**disproportionate** (kicks off a heavyweight research or review pass for what was a casual
+aside). `/premerge`, `/restructure-commits`, `/merge`, and `/wdyt` are gated this way; `/docs`
+deliberately isn't.
+
+To gate a skill, write its frontmatter `description` so it names the command and refuses
+conversational inference:
+
+```
+Run this ONLY when the user explicitly invokes /<name>. Never trigger it from conversational
+context or infer it from phrases like "...", "...". The explicit /<name> invocation is the
+required go-ahead.
+```
+
+Enumerating the phrases it must *not* fire on is the part that does the work — a bare "only when
+invoked" leaves the model to guess what counts as an invocation.
+
 ## Version bumping
 
 When you change a plugin, bump its `version` in `plugins/<name>/.claude-plugin/plugin.json` as

@@ -26,7 +26,7 @@ plugins become installable in any project, on any machine or account.
 |--------|-------------------|
 | [`dev-workflow`](plugins/dev-workflow) | Branch/PR lifecycle skills (`/premerge`, `/restructure-commits`, `/merge`) that also run in local-only repos with no remote, a docs-sync skill (`/docs`), and three review agents (code reviewer, Conventional-Commits message writer, documentation gap-finder). |
 | [`second-brain`](plugins/second-brain) | An LLM-wiki memory pattern: a `SessionEnd` hook captures every session, then skills file it into a topical wiki + temporal journal. Plain Markdown — view in Obsidian or any editor. |
-| [`common`](plugins/common) | Catch-all for skills and agents that don't yet warrant their own focused plugin — a staging area where related items get extracted into a dedicated plugin as they accumulate. |
+| [`common`](plugins/common) | Catch-all for skills and agents that don't yet warrant their own focused plugin — a staging area where related items get extracted into a dedicated plugin as they accumulate. Currently `/wdyt`: an honest, researched second opinion on a plan, design, or piece of code (explicit invocation only). |
 
 ## Layout
 
