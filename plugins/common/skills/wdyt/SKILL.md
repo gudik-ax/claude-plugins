@@ -50,8 +50,10 @@ line of confirmation is enough and then move on.
 An opinion pulled from vibes is the failure mode you're here to avoid. Do the legwork:
 
 - **Read the actual code.** Open the files in question, the call sites, the tests, the
-  surrounding patterns. Opinions about a system you haven't looked at are guesses. Many "wdyt?"
-  questions dissolve once you see what the code actually does.
+  surrounding patterns. Opinions about a system you haven't looked at are guesses; many "wdyt?"
+  questions dissolve once you see what the code actually does. But read to understand the
+  *problem*, not to inherit the current *answer* to it — what the code does is evidence about
+  the constraints, never evidence that the approach is right.
 - **Check how the world does this.** Search the web for current best practice, official docs,
   idiomatic patterns, and known pitfalls — especially for anything version-specific, fast-moving,
   or where your training data may be stale (library APIs, framework conventions, language
