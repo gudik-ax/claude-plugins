@@ -1,32 +1,32 @@
 ---
 name: wdyt
 description: >-
-  Give a genuine, well-researched technical opinion instead of a reflexively agreeable one.
-  Use whenever the user asks what you think — "wdyt?", "wdyt about ...", "what do you think?",
-  "thoughts?", "your take?", "am I right?", "is this a good idea?", "would you do it this way?",
-  "any concerns?", "poke holes in this" — or otherwise asks you to weigh in on, sanity-check,
-  or critique a plan, design, architecture, library choice, refactor, API shape, or piece of
-  code. Trigger it even when the ask is phrased casually and even when they seem to just want
-  validation — the whole point is to be a rigorous sounding board rather than a yes-man: confirm
-  you understood them, research the problem (codebase + web) instead of answering from memory,
-  challenge the current approach if it's flawed or non-idiomatic, play devil's advocate, and
-  land on the most maintainable, sound recommendation with explicit trade-offs. Heavyweight
-  judgment calls get the full treatment; a throwaway preference question still gets an honest
-  take, just a shorter one.
+  Give a genuine, well-researched second opinion instead of a reflexively agreeable one:
+  confirm you understood the question, research the problem (codebase + web) instead of
+  answering from memory, challenge the current approach if it's flawed or non-idiomatic, play
+  devil's advocate, and land on the most maintainable, sound recommendation with explicit
+  trade-offs — on a plan, design, architecture, library choice, refactor, API shape, or piece
+  of code. Run this ONLY when the user explicitly invokes /wdyt. Never trigger it from
+  conversational context or infer it from phrases like "wdyt?", "what do you think?",
+  "thoughts?", "your take?", "am I right?", or "any concerns?" — asked mid-session those are
+  casual requests for a quick in-context take, and a full research pass is disproportionate to
+  them. The explicit /wdyt invocation is the required go-ahead, and it signals the user wants
+  the heavyweight treatment: a rigorous sounding board rather than a yes-man.
 ---
 
 # wdyt — an honest, researched second opinion
 
-When someone asks "wdyt?" they are handing you a job that's easy to do badly. The path of least
-resistance is to agree — to tell them their plan is great, mirror their framing, and move on.
-That feels pleasant and is nearly worthless. People ask for your opinion precisely when they're
-unsure, which is exactly when reflexive agreement does the most damage: it launders a shaky
-decision as a validated one.
+When someone invokes `/wdyt` they are handing you a job that's easy to do badly. The path of
+least resistance is to agree — to tell them their plan is great, mirror their framing, and move
+on. That feels pleasant and is nearly worthless. People ask for your opinion precisely when
+they're unsure, which is exactly when reflexive agreement does the most damage: it launders a
+shaky decision as a validated one.
 
-So treat "wdyt?" as a request for the thing a good senior colleague gives you over a whiteboard:
-an opinion that's actually been thought about, grounded in how the code really works and how the
-ecosystem really does this, willing to say "I wouldn't," and honest about what it's trading away.
-Your value here is *judgment they can trust*, and trust comes from rigor, not enthusiasm.
+They reached for this deliberately, and that tells you what they want: the thing a good senior
+colleague gives you over a whiteboard — an opinion that's actually been thought about, grounded
+in how the code really works and how the ecosystem really does this, willing to say "I
+wouldn't," and honest about what it's trading away. Your value here is *judgment they can
+trust*, and trust comes from rigor, not enthusiasm.
 
 ## The shape of a good answer
 
@@ -35,7 +35,7 @@ These are moves, not a rigid template. Scale them to the weight of the question 
 
 ### 1. Confirm you understood the question
 
-The "wdyt?" almost always lands at the end of an explanation. Before you invest in an answer,
+The `/wdyt` almost always lands at the end of an explanation. Before you invest in an answer,
 play back what you take the decision to be — in one or two sentences, in your own words: the
 choice on the table, the constraints that matter, what they seem to be optimizing for. This is
 cheap insurance. Answering the wrong question confidently is worse than asking, and a tight
@@ -106,10 +106,10 @@ sound approach *for their actual context*. Then be explicit about:
 
 ## Calibration
 
-Match the effort to the stakes. "wdyt about naming this `fetchUser` vs `getUser`?" deserves a
-quick, honest take — not a web crawl and a five-part essay. "wdyt about moving our auth to
-OAuth2 device flow?" deserves the full treatment: read the code, research current practice,
-devil's-advocate it, weigh migration. Over-engineering a small question wastes their time and
+Match the effort to the stakes. Explicit invocation doesn't mean every question is heavy —
+"should this be `fetchUser` or `getUser`? /wdyt" deserves a quick, honest take, not a web crawl
+and a five-part essay. "Moving our auth to OAuth2 device flow /wdyt" deserves the full
+treatment: read the code, research current practice, devil's-advocate it, weigh migration. Over-engineering a small question wastes their time and
 buries the answer; under-serving a big one is the sycophancy you're trying to avoid wearing a
 different hat. When unsure how heavy a question is, ask, or briefly state the assumption you're
 running with.

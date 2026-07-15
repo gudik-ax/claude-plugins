@@ -1,6 +1,6 @@
 {
   "name": "common",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Catch-all for skills and agents that don't yet warrant their own focused plugin — a staging area where related items get extracted into a dedicated plugin as they accumulate.",
   "author": {
     "name": "Aleksey (gudik)",
